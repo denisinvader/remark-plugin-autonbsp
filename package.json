@@ -1,0 +1,42 @@
+{
+    "name": "remark-plugin-autonbsp",
+    "version": "0.0.1",
+    "license": "MIT",
+    "author": "Mikhail Panichev <denis.invader@gmail.com>",
+    "repository": "github:denisinvader/remark-plugin-autonbsp",
+    "bugs": {
+        "url": "https://github.com/denisinvader/remark-plugin-autonbsp/issues"
+    },
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "build": "rm -rf dist && tsc -b && vite build",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "prepublishOnly": "tsc -b && vitest run && rm -rf dist && vite build"
+    },
+    "dependencies": {
+        "@dinvader/autonbsp": "^0.1.2",
+        "@types/mdast": "^4.0.4",
+        "unist-util-visit": "^5.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.1.0",
+        "prettier": "^3.8.1",
+        "remark": "^15.0.1",
+        "remark-parse": "^11.0.0",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.1",
+        "vite-plugin-dts": "^4.5.4",
+        "vitest": "^4.0.18"
+    }
+}
