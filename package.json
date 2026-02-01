@@ -25,7 +25,7 @@
         "prepublishOnly": "tsc -b && vitest run && rm -rf dist && vite build"
     },
     "dependencies": {
-        "@dinvader/autonbsp": "^0.1.2",
+        "@dinvader/autonbsp": "^1.0.0",
         "@types/mdast": "^4.0.4",
         "unist-util-visit": "^5.1.0"
     },
