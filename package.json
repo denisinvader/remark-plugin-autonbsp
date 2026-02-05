@@ -8,36 +8,30 @@
         "url": "https://github.com/denisinvader/remark-plugin-autonbsp/issues"
     },
     "type": "module",
-    "types": "dist/index.d.ts",
     "files": [
         "dist/**/*"
     ],
-    "exports": {
-        ".": "./dist/index.js"
-    },
+    "exports": "./dist/index.js",
     "engines": {
         "node": ">=18"
     },
     "scripts": {
-        "build": "rm -rf dist && tsc -b && vite build",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "prepublishOnly": "tsc -b && vitest run && rm -rf dist && vite build"
+        "build": "rm -rf dist && tsc -b --force",
+        "test": "tsc -p tsconfig.test.json && node --import tsx --test **/*.test.*",
+        "prepack": "npm run test && npm run build"
     },
     "dependencies": {
-        "@dinvader/autonbsp": "^1.0.0",
+        "@dinvader/autonbsp": "^1.0.1",
         "@types/mdast": "^4.0.4",
         "unist-util-visit": "^5.1.0"
     },
     "devDependencies": {
-        "@types/node": "^25.1.0",
+        "@types/node": "^24.0.0",
         "prettier": "^3.8.1",
         "remark": "^15.0.1",
         "remark-parse": "^11.0.0",
-        "typescript": "^5.9.3",
-        "vite": "^7.3.1",
-        "vite-plugin-dts": "^4.5.4",
-        "vitest": "^4.0.18"
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
     },
     "keywords": [
         "remark",

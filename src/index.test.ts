@@ -1,4 +1,5 @@
-import { expect, test } from 'vitest';
+import { test } from 'node:test';
+import { equal } from 'assert/strict';
 import { remark } from 'remark';
 import remarkParse from 'remark-parse';
 import { remarkPluginAutoNBSP, type AutoNBSPConfig } from '.';
@@ -60,5 +61,5 @@ console.log(value);
 Final paragraph ends with${_}a${_}hanging preposition: in${_}This depends on
 `;
 
-    expect(String(await remark().use(remarkParse).use(remarkPluginAutoNBSP, config).process(INPUT))).toEqual(OUTPUT);
+    equal(String(await remark().use(remarkParse).use(remarkPluginAutoNBSP, config).process(INPUT)), OUTPUT);
 });
