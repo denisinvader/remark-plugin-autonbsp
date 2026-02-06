@@ -11,7 +11,6 @@
     "files": [
         "dist/**/*"
     ],
-    "types": "dist/index.d.ts",
     "exports": "./dist/index.js",
     "engines": {
         "node": ">=18"
@@ -22,7 +21,7 @@
         "prepack": "npm run test && npm run build"
     },
     "dependencies": {
-        "@dinvader/autonbsp": "^1.0.2",
+        "@dinvader/autonbsp": "^1.0.3",
         "@types/mdast": "^4.0.4",
         "unist-util-visit": "^5.1.0"
     },
